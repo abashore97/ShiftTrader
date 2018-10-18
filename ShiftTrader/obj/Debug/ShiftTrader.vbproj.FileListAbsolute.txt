@@ -1,0 +1,13 @@
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.vbprojResolveAssemblyReference.cache
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.frmLogin.resources
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.Resources.resources
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.vbproj.GenerateResource.cache
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.vbproj.CoreCompileInputs.cache
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\bin\Debug\ShiftTrader.exe.config
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\bin\Debug\ShiftTrader.exe
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\bin\Debug\ShiftTrader.pdb
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\bin\Debug\ShiftTrader.xml
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.exe
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.xml
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.pdb
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.frmCreateAccount.resources
