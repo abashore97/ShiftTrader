@@ -8,7 +8,7 @@ Public Class frmLogin
         Dim password = txtPassword.Text
 
         ' In case the user doesn't enter one or both of the required fields
-        If userName == "" Or password == "" Then
+        If userName = "" Or password = "" Then
             MsgBox("Please enter a username and a password to continue", MsgBoxStyle.Information)
         End If
 

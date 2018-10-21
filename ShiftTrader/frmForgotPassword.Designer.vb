@@ -25,7 +25,7 @@ Partial Class frmForgotPassword
         Me.lblUserName = New System.Windows.Forms.Label()
         Me.lblNewPassword = New System.Windows.Forms.Label()
         Me.lblConfirmPassword = New System.Windows.Forms.Label()
-        Me.txtUserName = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtNewPassword = New System.Windows.Forms.TextBox()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.btnOK = New System.Windows.Forms.Button()
@@ -59,12 +59,12 @@ Partial Class frmForgotPassword
         Me.lblConfirmPassword.TabIndex = 2
         Me.lblConfirmPassword.Text = "Confirm Password:"
         '
-        'txtUserName
+        'txtUsername
         '
-        Me.txtUserName.Location = New System.Drawing.Point(161, 50)
-        Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(182, 22)
-        Me.txtUserName.TabIndex = 3
+        Me.txtUsername.Location = New System.Drawing.Point(161, 50)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(182, 22)
+        Me.txtUsername.TabIndex = 3
         '
         'txtNewPassword
         '
@@ -109,11 +109,12 @@ Partial Class frmForgotPassword
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.txtConfirmPassword)
         Me.Controls.Add(Me.txtNewPassword)
-        Me.Controls.Add(Me.txtUserName)
+        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.lblConfirmPassword)
         Me.Controls.Add(Me.lblNewPassword)
         Me.Controls.Add(Me.lblUserName)
         Me.Name = "frmForgotPassword"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmForgotPassword"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -123,7 +124,7 @@ Partial Class frmForgotPassword
     Friend WithEvents lblUserName As Label
     Friend WithEvents lblNewPassword As Label
     Friend WithEvents lblConfirmPassword As Label
-    Friend WithEvents txtUserName As TextBox
+    Friend WithEvents txtUsername As TextBox
     Friend WithEvents txtNewPassword As TextBox
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents btnOK As Button

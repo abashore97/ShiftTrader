@@ -3,10 +3,10 @@
 Public Class frmCreateAccount
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         Dim firstName = txtFirstName.Text
-        Dim lastName = txtPassword.Text
-        Dim email = txtUserName.Text
-        Dim userName = txtEmail.Text
-        Dim password = txtLastName.Text
+        Dim lastName = txtLastName.Text
+        Dim email = txtEmail.Text
+        Dim userName = txtUsername.Text
+        Dim password = txtPassword.Text
 
         ' TODO: add verification of email via regex
         writeToFile(firstName, lastName, email, userName, password)
