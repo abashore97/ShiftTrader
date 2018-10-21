@@ -60,4 +60,8 @@ Public Class frmLogin
         End If
         Return False
     End Function
+
+    Private Sub lblForgotPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblForgotPassword.LinkClicked
+        frmForgotPassword.Show()
+    End Sub
 End Class
