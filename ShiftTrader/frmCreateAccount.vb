@@ -21,7 +21,7 @@ Public Class frmCreateAccount
     Private Sub writeToFile(firstName As String, lastName As String, email As String, userName As String, password As String)
         Dim writer As StreamWriter = File.AppendText("Accounts.txt")
         ' One account's records are stored on one like, seperated by comma ans space
-        writer.WriteLine(firstName & ", " & lastName & ", " + email & ", " + userName & ", " & password)
+        writer.WriteLine(firstName & "," & lastName & "," + email & "," + userName & "," & password)
         writer.Close()
     End Sub
 End Class

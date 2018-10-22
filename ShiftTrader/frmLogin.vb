@@ -16,7 +16,8 @@ Public Class frmLogin
             Me.Hide()
         End If
 
-
+        txtUserName.Clear()
+        txtPassword.Clear()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

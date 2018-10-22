@@ -1,1 +1,2 @@
 Abby, Bashore, abashore@gmail.com, abasho, pass123
+Jane,Smith,jsmith@gmail.com,jsmith,cookies
