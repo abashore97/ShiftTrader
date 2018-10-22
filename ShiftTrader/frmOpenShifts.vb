@@ -25,4 +25,9 @@ Public Class frmOpenShifts
         loadData()
     End Sub
 
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        logOut()
+        Me.Close()
+        frmLogin.Show()
+    End Sub
 End Class

@@ -75,12 +75,11 @@ Partial Class frmOpenShifts
         'lstOpenShifts
         '
         Me.lstOpenShifts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clmName, Me.clmDate, Me.clmStartTime, Me.clmEndTime, Me.clmLocation, Me.clmPermanent})
-        Me.lstOpenShifts.FullRowSelect = True
         Me.lstOpenShifts.GridLines = True
         Me.lstOpenShifts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lstOpenShifts.Location = New System.Drawing.Point(75, 64)
         Me.lstOpenShifts.Name = "lstOpenShifts"
-        Me.lstOpenShifts.Size = New System.Drawing.Size(580, 339)
+        Me.lstOpenShifts.Size = New System.Drawing.Size(585, 339)
         Me.lstOpenShifts.TabIndex = 5
         Me.lstOpenShifts.UseCompatibleStateImageBehavior = False
         Me.lstOpenShifts.View = System.Windows.Forms.View.Details
