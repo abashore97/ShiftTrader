@@ -39,8 +39,16 @@ Public Class frmOpenShifts
             For i = 0 To 5
                 selectedShift(i) = selected.Item(0).SubItems(i).Text
             Next
+
+            ' cannot take your own shift
+            Dim splitName() As String = selectedShift(0).Split(" ")
+            If splitName(0) = loggedOn(0) And splitName(1) = loggedOn(1) Then
+                MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
+            End If
+
             frmTakeShift.Show()
             Me.Hide()
+
         End If
     End Sub
 End Class
