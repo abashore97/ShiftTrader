@@ -91,6 +91,12 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmOpenShifts.Designer.vb">
+      <DependentUpon>frmOpenShifts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenShifts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenShifts.resx">
+      <DependentUpon>frmOpenShifts.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
