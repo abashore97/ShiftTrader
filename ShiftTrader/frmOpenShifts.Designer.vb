@@ -22,22 +22,18 @@ Partial Class frmOpenShifts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lstOpenShifts = New System.Windows.Forms.ListBox()
         Me.lblOpenShifts = New System.Windows.Forms.Label()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnMyShifts = New System.Windows.Forms.Button()
         Me.btnTakeShift = New System.Windows.Forms.Button()
+        Me.lstOpenShifts = New System.Windows.Forms.ListView()
+        Me.clmName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmStartTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmEndTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmLocation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmPermanent = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
-        '
-        'lstOpenShifts
-        '
-        Me.lstOpenShifts.FormattingEnabled = True
-        Me.lstOpenShifts.ItemHeight = 16
-        Me.lstOpenShifts.Location = New System.Drawing.Point(49, 64)
-        Me.lstOpenShifts.MultiColumn = True
-        Me.lstOpenShifts.Name = "lstOpenShifts"
-        Me.lstOpenShifts.Size = New System.Drawing.Size(458, 260)
-        Me.lstOpenShifts.TabIndex = 0
         '
         'lblOpenShifts
         '
@@ -51,7 +47,7 @@ Partial Class frmOpenShifts
         '
         'btnLogOut
         '
-        Me.btnLogOut.Location = New System.Drawing.Point(529, 347)
+        Me.btnLogOut.Location = New System.Drawing.Point(636, 448)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(91, 28)
         Me.btnLogOut.TabIndex = 2
@@ -60,7 +56,7 @@ Partial Class frmOpenShifts
         '
         'btnMyShifts
         '
-        Me.btnMyShifts.Location = New System.Drawing.Point(529, 64)
+        Me.btnMyShifts.Location = New System.Drawing.Point(636, 64)
         Me.btnMyShifts.Name = "btnMyShifts"
         Me.btnMyShifts.Size = New System.Drawing.Size(91, 28)
         Me.btnMyShifts.TabIndex = 3
@@ -69,23 +65,66 @@ Partial Class frmOpenShifts
         '
         'btnTakeShift
         '
-        Me.btnTakeShift.Location = New System.Drawing.Point(529, 98)
+        Me.btnTakeShift.Location = New System.Drawing.Point(636, 112)
         Me.btnTakeShift.Name = "btnTakeShift"
         Me.btnTakeShift.Size = New System.Drawing.Size(91, 28)
         Me.btnTakeShift.TabIndex = 4
         Me.btnTakeShift.Text = "Take Shift"
         Me.btnTakeShift.UseVisualStyleBackColor = True
         '
+        'lstOpenShifts
+        '
+        Me.lstOpenShifts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clmName, Me.clmDate, Me.clmStartTime, Me.clmEndTime, Me.clmLocation, Me.clmPermanent})
+        Me.lstOpenShifts.FullRowSelect = True
+        Me.lstOpenShifts.GridLines = True
+        Me.lstOpenShifts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.lstOpenShifts.Location = New System.Drawing.Point(49, 64)
+        Me.lstOpenShifts.Name = "lstOpenShifts"
+        Me.lstOpenShifts.Size = New System.Drawing.Size(573, 339)
+        Me.lstOpenShifts.TabIndex = 5
+        Me.lstOpenShifts.UseCompatibleStateImageBehavior = False
+        Me.lstOpenShifts.View = System.Windows.Forms.View.Details
+        '
+        'clmName
+        '
+        Me.clmName.Text = "Name"
+        Me.clmName.Width = 95
+        '
+        'clmDate
+        '
+        Me.clmDate.Text = "Date"
+        Me.clmDate.Width = 95
+        '
+        'clmStartTime
+        '
+        Me.clmStartTime.Text = "Start Time"
+        Me.clmStartTime.Width = 95
+        '
+        'clmEndTime
+        '
+        Me.clmEndTime.Text = "End Time"
+        Me.clmEndTime.Width = 95
+        '
+        'clmLocation
+        '
+        Me.clmLocation.Text = "Location"
+        Me.clmLocation.Width = 95
+        '
+        'clmPermanent
+        '
+        Me.clmPermanent.Text = "Permanent?"
+        Me.clmPermanent.Width = 95
+        '
         'frmOpenShifts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(632, 387)
+        Me.ClientSize = New System.Drawing.Size(739, 488)
+        Me.Controls.Add(Me.lstOpenShifts)
         Me.Controls.Add(Me.btnTakeShift)
         Me.Controls.Add(Me.btnMyShifts)
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.lblOpenShifts)
-        Me.Controls.Add(Me.lstOpenShifts)
         Me.Name = "frmOpenShifts"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmOpenShifts"
@@ -93,10 +132,15 @@ Partial Class frmOpenShifts
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lstOpenShifts As ListBox
     Friend WithEvents lblOpenShifts As Label
     Friend WithEvents btnLogOut As Button
     Friend WithEvents btnMyShifts As Button
     Friend WithEvents btnTakeShift As Button
+    Friend WithEvents lstOpenShifts As ListView
+    Friend WithEvents clmName As ColumnHeader
+    Friend WithEvents clmDate As ColumnHeader
+    Friend WithEvents clmStartTime As ColumnHeader
+    Friend WithEvents clmEndTime As ColumnHeader
+    Friend WithEvents clmLocation As ColumnHeader
+    Friend WithEvents clmPermanent As ColumnHeader
 End Class

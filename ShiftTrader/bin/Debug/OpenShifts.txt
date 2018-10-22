@@ -1,1 +1,2 @@
-﻿Abby Bashore, 10/31/2018, 5pm, 7pm, Nelson, No
+﻿Abby Bashore,10/31/2018,5pm,7pm,Nelson,No
+Jane Smith,11/01/2018,1am,4am,JMAC,No

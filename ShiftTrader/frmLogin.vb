@@ -11,7 +11,10 @@ Public Class frmLogin
             MsgBox("Please enter a username and a password to continue", MsgBoxStyle.Information)
         End If
 
-        verifyLoginInfo(userName, password)
+        If verifyLoginInfo(userName, password) Then
+            frmOpenShifts.Show()
+            Me.Hide()
+        End If
 
 
     End Sub
