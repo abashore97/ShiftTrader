@@ -30,4 +30,17 @@ Public Class frmOpenShifts
         Me.Close()
         frmLogin.Show()
     End Sub
+
+    Private Sub btnTakeShift_Click(sender As Object, e As EventArgs) Handles btnTakeShift.Click
+        Dim selected As ListView.SelectedListViewItemCollection = lstOpenShifts.SelectedItems
+        If selected.Count = 0 Then
+            MsgBox("Please select an item to take a shift", MsgBoxStyle.Information)
+        Else
+            For i = 0 To 5
+                selectedShift(i) = selected.Item(0).SubItems(i).Text
+            Next
+            frmTakeShift.Show()
+            Me.Hide()
+        End If
+    End Sub
 End Class

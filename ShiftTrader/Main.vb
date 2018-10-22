@@ -3,6 +3,10 @@ Module Main
     ' Stores the information of who is currently logged on
     Public loggedOn(4) As String
 
+    ' Stores the selected shift in open shifts
+    Public selectedShift(5) As String
+
+
     ' logOut
     ' clears out the loggedOn array for next login 
     Public Sub logOut()
