@@ -7,7 +7,7 @@ Public Class frmForgotPassword
         Dim newPassword = txtNewPassword.Text
         Dim confirmPassword = txtConfirmPassword.Text
 
-        ' any left empty? prompt user to enter the requitre information
+        ' any left empty? prompt user to enter the required information
         If username <> "" Or newPassword <> "" Or confirmPassword <> "" Then
             ' make sure that both password fields match
             If confirmPassword = newPassword Then
