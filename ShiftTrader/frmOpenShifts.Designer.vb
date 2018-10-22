@@ -39,7 +39,7 @@ Partial Class frmOpenShifts
         '
         Me.lblOpenShifts.AutoSize = True
         Me.lblOpenShifts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOpenShifts.Location = New System.Drawing.Point(44, 24)
+        Me.lblOpenShifts.Location = New System.Drawing.Point(70, 20)
         Me.lblOpenShifts.Name = "lblOpenShifts"
         Me.lblOpenShifts.Size = New System.Drawing.Size(121, 25)
         Me.lblOpenShifts.TabIndex = 1
@@ -47,7 +47,7 @@ Partial Class frmOpenShifts
         '
         'btnLogOut
         '
-        Me.btnLogOut.Location = New System.Drawing.Point(636, 448)
+        Me.btnLogOut.Location = New System.Drawing.Point(737, 448)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(91, 28)
         Me.btnLogOut.TabIndex = 2
@@ -56,7 +56,7 @@ Partial Class frmOpenShifts
         '
         'btnMyShifts
         '
-        Me.btnMyShifts.Location = New System.Drawing.Point(636, 64)
+        Me.btnMyShifts.Location = New System.Drawing.Point(737, 64)
         Me.btnMyShifts.Name = "btnMyShifts"
         Me.btnMyShifts.Size = New System.Drawing.Size(91, 28)
         Me.btnMyShifts.TabIndex = 3
@@ -65,7 +65,7 @@ Partial Class frmOpenShifts
         '
         'btnTakeShift
         '
-        Me.btnTakeShift.Location = New System.Drawing.Point(636, 112)
+        Me.btnTakeShift.Location = New System.Drawing.Point(737, 110)
         Me.btnTakeShift.Name = "btnTakeShift"
         Me.btnTakeShift.Size = New System.Drawing.Size(91, 28)
         Me.btnTakeShift.TabIndex = 4
@@ -78,9 +78,9 @@ Partial Class frmOpenShifts
         Me.lstOpenShifts.FullRowSelect = True
         Me.lstOpenShifts.GridLines = True
         Me.lstOpenShifts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.lstOpenShifts.Location = New System.Drawing.Point(49, 64)
+        Me.lstOpenShifts.Location = New System.Drawing.Point(75, 64)
         Me.lstOpenShifts.Name = "lstOpenShifts"
-        Me.lstOpenShifts.Size = New System.Drawing.Size(573, 339)
+        Me.lstOpenShifts.Size = New System.Drawing.Size(580, 339)
         Me.lstOpenShifts.TabIndex = 5
         Me.lstOpenShifts.UseCompatibleStateImageBehavior = False
         Me.lstOpenShifts.View = System.Windows.Forms.View.Details
@@ -88,38 +88,38 @@ Partial Class frmOpenShifts
         'clmName
         '
         Me.clmName.Text = "Name"
-        Me.clmName.Width = 95
+        Me.clmName.Width = 49
         '
         'clmDate
         '
         Me.clmDate.Text = "Date"
-        Me.clmDate.Width = 95
+        Me.clmDate.Width = 41
         '
         'clmStartTime
         '
         Me.clmStartTime.Text = "Start Time"
-        Me.clmStartTime.Width = 95
+        Me.clmStartTime.Width = 73
         '
         'clmEndTime
         '
         Me.clmEndTime.Text = "End Time"
-        Me.clmEndTime.Width = 95
+        Me.clmEndTime.Width = 70
         '
         'clmLocation
         '
         Me.clmLocation.Text = "Location"
-        Me.clmLocation.Width = 95
+        Me.clmLocation.Width = 63
         '
         'clmPermanent
         '
         Me.clmPermanent.Text = "Permanent?"
-        Me.clmPermanent.Width = 95
+        Me.clmPermanent.Width = 84
         '
         'frmOpenShifts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(739, 488)
+        Me.ClientSize = New System.Drawing.Size(840, 488)
         Me.Controls.Add(Me.lstOpenShifts)
         Me.Controls.Add(Me.btnTakeShift)
         Me.Controls.Add(Me.btnMyShifts)

@@ -15,6 +15,9 @@ Public Class frmOpenShifts
                 lstOpenShifts.Items.Add(item)
 
             Next
+            ' resize name and date columns to widest entry
+            clmName.Width = -1
+            clmDate.Width = -1
         End If
     End Sub
 
