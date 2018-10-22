@@ -41,39 +41,29 @@ Public Class frmLogin
     End Sub
     ' verifyLoginInfo
     ' takes in a username and password, returns whether or not the username and password are valid
-    Private Function verifyLoginInfo(userName As String, password As String) As Boolean
-        If File.Exists("Accounts.txt") Then
-            Dim reader As StreamReader = File.OpenText("Accounts.txt")
-            Dim accountInfo As String
-            Do Until reader.EndOfStream
-                accountInfo = reader.ReadLine ' grabs all the account information for one person
-                Dim accountProperties = accountInfo.Split(", ") '  allows us to examine properties separately 
+    Private Function verifyLoginInfo(username As String, password As String) As Boolean
+        Dim accountInfo() As String = findAccount(username)
 
-                ' the usernames are the 4th thing listed
-                Dim expectedUserName = accountProperties(3).Trim
-                ' finds a valid username first, then we examine the password
-                If expectedUserName = userName Then
-                    Dim expectedPassword = accountProperties(4).Trim
-
-                    If expectedPassword = password Then
-                        saveLoginInfo(accountProperties)
-                        reader.Close()
-                        Return True
-                    Else
-                        ' we know the username that the user entered exists, but they typed their password wrong
-                        MsgBox("The password you entered is incorrect! Please Try Again", MsgBoxStyle.Exclamation
-                               )
-                        reader.Close()
-                        Return False
-                    End If
-                End If
-            Loop
-            ' reaching the end of the file implies that we never found a user with the specified username
+        If accountInfo.Count = 0 Then
             MsgBox("The username you entered does not exist! Please Try Again",
-                   MsgBoxStyle.Exclamation)
-            reader.Close()
+                       MsgBoxStyle.Exclamation)
+            Return False
         End If
-        Return False
+
+        ' finds a valid username first, then we examine the password
+        If accountInfo(3) = username Then
+            Dim expectedPassword = accountInfo(4)
+
+            If expectedPassword = password Then
+                saveLoginInfo(accountInfo)
+                Return True
+            Else
+                ' we know the username that the user entered exists, but they typed their password wrong
+                MsgBox("The password you entered is incorrect! Please Try Again", MsgBoxStyle.Exclamation
+                               )
+                Return False
+            End If
+        End If
     End Function
 
 

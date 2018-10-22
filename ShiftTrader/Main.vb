@@ -46,4 +46,26 @@ Module Main
         reader.Close()
         Return {}
     End Function
+
+    ' findAccount
+    ' overload: finds account by username instead
+    Public Function findAccount(username As String) As String()
+        Dim reader As StreamReader
+        If File.Exists("Accounts.txt") Then
+            reader = File.OpenText("Accounts.txt")
+            Dim accountInfo As String
+            Dim accountProperties() As String
+            Do Until reader.EndOfStream
+                accountInfo = reader.ReadLine
+                accountProperties = accountInfo.Split(",")
+
+                If accountProperties(3) = username Then
+                    reader.Close()
+                    Return accountProperties
+                End If
+            Loop
+        End If
+        reader.Close()
+        Return {}
+    End Function
 End Module
