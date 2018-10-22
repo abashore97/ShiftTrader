@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 
-
 Public Class frmLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         ' Access what the user put in the form 
@@ -11,7 +10,6 @@ Public Class frmLogin
         If userName = "" Or password = "" Then
             MsgBox("Please enter a username and a password to continue", MsgBoxStyle.Information)
         End If
-
 
         verifyLoginInfo(userName, password)
 
@@ -28,7 +26,7 @@ Public Class frmLogin
 
     ' verifyLoginInfo
     ' takes in a username and password, returns whether or not the username and password are valid
-    Function verifyLoginInfo(userName As String, password As String) As Boolean
+    Private Function verifyLoginInfo(userName As String, password As String) As Boolean
         If File.Exists("Accounts.txt") Then
             Dim reader As StreamReader = File.OpenText("Accounts.txt")
             Dim accountInfo As String
