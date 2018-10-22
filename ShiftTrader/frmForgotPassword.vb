@@ -38,10 +38,10 @@ Public Class frmForgotPassword
                 accountInfo = reader.ReadLine
                 Dim accountProperties = accountInfo.Split(",")
 
-                Dim expectedUsername = accountProperties(3).Trim
+                Dim expectedUsername = accountProperties(3)
                 ' find the username that the user is changing the password for
                 If expectedUsername = username Then
-                    accountProperties(4) = " " & newPassword
+                    accountProperties(4) = newPassword
                     ' create new account record with new password
                     accountInfo = String.Join(",", accountProperties)
 
