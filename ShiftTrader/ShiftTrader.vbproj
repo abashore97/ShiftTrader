@@ -97,6 +97,12 @@
     <Compile Include="frmOpenShifts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmTakeShift.Designer.vb">
+      <DependentUpon>frmTakeShift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTakeShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpenShifts.resx">
       <DependentUpon>frmOpenShifts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTakeShift.resx">
+      <DependentUpon>frmTakeShift.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
