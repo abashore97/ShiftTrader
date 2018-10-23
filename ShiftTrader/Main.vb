@@ -5,7 +5,7 @@ Module Main
     ' Stores the information of who is currently logged on
     Public loggedOn(4) As String
 
-    ' Stores the selected shift in open shifts
+    ' Stores the selected shift in open shifts or my shifts
     Public selectedShift(5) As String
 
 
@@ -25,9 +25,22 @@ Module Main
         Next
     End Sub
 
+    ' storeSelectedShift
+    ' takes in whatever list view we are selecting from and stores its contents into an array
+    Public Sub storeSelectedShift(lstView As ListView)
+        Dim selected As ListView.SelectedListViewItemCollection = lstView.SelectedItems
+        If selected.Count = 0 Then
+            MsgBox("Please select an item to take a shift", MsgBoxStyle.Information)
+        Else
+            For i = 0 To 5
+                selectedShift(i) = selected.Item(0).SubItems(i).Text
+            Next
+        End If
+    End Sub
+
     ' deleteShift
     ' delete a shift out when taken
-    Public Sub deleteShift(name As String, dateShift As String, startTime As String, endTime As String, location As String, permanent As String)
+    Public Sub deleteShift(shift As String())
         Dim reader As StreamReader
         Dim writer As StreamWriter
         If File.Exists("OpenShifts.txt") Then
@@ -39,12 +52,12 @@ Module Main
                 shiftInfo = reader.ReadLine
                 shiftProperties = shiftInfo.Split(",")
 
-                If shiftProperties(0) <> name Or
-                   shiftProperties(1) <> dateShift Or
-                   shiftProperties(2) <> startTime Or
-                   shiftProperties(3) <> endTime Or
-                   shiftProperties(4) <> location Or
-                   shiftProperties(5) <> permanent Then
+                If shiftProperties(0) <> shift(0) Or
+                   shiftProperties(1) <> shift(1) Or
+                   shiftProperties(2) <> shift(2) Or
+                   shiftProperties(3) <> shift(3) Or
+                   shiftProperties(4) <> shift(4) Or
+                   shiftProperties(5) <> shift(5) Then
 
                     writer.WriteLine(shiftInfo)
 
@@ -86,9 +99,7 @@ Module Main
     ' findShifts
     ' finds all shifts under one name
     Public Function findShifts(name As String) As String()
-        Dim myShifts() As String
-        myShifts.Initialize()
-        Dim count As Integer = 0
+        Dim myShifts As List(Of String) = New List(Of String)
         Dim reader As StreamReader
         If File.Exists("OpenShifts.txt") Then
             reader = File.OpenText("OpenShifts.txt")
@@ -101,13 +112,12 @@ Module Main
 
                 'Add shift information to myShifts Array
                 If shiftProperties(0) = name Then
-                    myShifts(count) = shiftInfo
-                    count += 1
+                    myShifts.Add(shiftInfo)
                 End If
             Loop
         End If
         reader.Close()
-        Return myShifts
+        Return myShifts.ToArray
     End Function
     ' findAccount 
     ' Searches for account holder by first and last name

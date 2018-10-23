@@ -41,7 +41,7 @@ Partial Class frmMyShifts
         '
         Me.btnLogOut.Location = New System.Drawing.Point(737, 448)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(91, 28)
+        Me.btnLogOut.Size = New System.Drawing.Size(96, 28)
         Me.btnLogOut.TabIndex = 0
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = True
@@ -50,7 +50,7 @@ Partial Class frmMyShifts
         '
         Me.btnAddShift.Location = New System.Drawing.Point(737, 140)
         Me.btnAddShift.Name = "btnAddShift"
-        Me.btnAddShift.Size = New System.Drawing.Size(91, 28)
+        Me.btnAddShift.Size = New System.Drawing.Size(96, 28)
         Me.btnAddShift.TabIndex = 1
         Me.btnAddShift.Text = "Add Shift"
         Me.btnAddShift.UseVisualStyleBackColor = True
@@ -59,7 +59,7 @@ Partial Class frmMyShifts
         '
         Me.btnEditShift.Location = New System.Drawing.Point(737, 174)
         Me.btnEditShift.Name = "btnEditShift"
-        Me.btnEditShift.Size = New System.Drawing.Size(91, 28)
+        Me.btnEditShift.Size = New System.Drawing.Size(96, 28)
         Me.btnEditShift.TabIndex = 2
         Me.btnEditShift.Text = "Edit Shift"
         Me.btnEditShift.UseVisualStyleBackColor = True
@@ -68,7 +68,7 @@ Partial Class frmMyShifts
         '
         Me.btnDeleteShift.Location = New System.Drawing.Point(737, 208)
         Me.btnDeleteShift.Name = "btnDeleteShift"
-        Me.btnDeleteShift.Size = New System.Drawing.Size(91, 28)
+        Me.btnDeleteShift.Size = New System.Drawing.Size(96, 28)
         Me.btnDeleteShift.TabIndex = 3
         Me.btnDeleteShift.Text = "Delete Shift"
         Me.btnDeleteShift.UseVisualStyleBackColor = True
@@ -77,7 +77,7 @@ Partial Class frmMyShifts
         '
         Me.btnOpenShifts.Location = New System.Drawing.Point(737, 64)
         Me.btnOpenShifts.Name = "btnOpenShifts"
-        Me.btnOpenShifts.Size = New System.Drawing.Size(91, 28)
+        Me.btnOpenShifts.Size = New System.Drawing.Size(96, 28)
         Me.btnOpenShifts.TabIndex = 4
         Me.btnOpenShifts.Text = "Open Shifts"
         Me.btnOpenShifts.UseVisualStyleBackColor = True
