@@ -82,6 +82,33 @@ Module Main
         reader.Close()
         Return {}
     End Function
+
+    ' findShifts
+    ' finds all shifts under one name
+    Public Function findShifts(name As String) As String()
+        Dim myShifts() As String
+        myShifts.Initialize()
+        Dim count As Integer = 0
+        Dim reader As StreamReader
+        If File.Exists("OpenShifts.txt") Then
+            reader = File.OpenText("OpenShifts.txt")
+            Dim shiftInfo As String
+
+            Dim shiftProperties() As String
+            Do Until reader.EndOfStream
+                shiftInfo = reader.ReadLine
+                shiftProperties = shiftInfo.Split(",")
+
+                'Add shift information to myShifts Array
+                If shiftProperties(0) = name Then
+                    myShifts(count) = shiftInfo
+                    count += 1
+                End If
+            Loop
+        End If
+        reader.Close()
+        Return myShifts
+    End Function
     ' findAccount 
     ' Searches for account holder by first and last name
     Public Function findAccount(firstName As String, lastName As String) As String()
