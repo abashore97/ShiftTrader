@@ -12,17 +12,13 @@ Module Main
     ' logOut
     ' clears out the loggedOn array for next login 
     Public Sub logOut()
-        For i = 0 To 4
-            loggedOn(i) = ""
-        Next
+        loggedOn = Nothing
     End Sub
 
     ' clearSelectedShift
     ' clears the contents of the selected shift array after taking shift
     Public Sub clearSelectedShift()
-        For i = 0 To 5
-            selectedShift(i) = ""
-        Next
+        selectedShift = Nothing
     End Sub
 
     ' storeSelectedShift

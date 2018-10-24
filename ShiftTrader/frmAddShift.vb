@@ -1,7 +1,7 @@
 ﻿Public Class frmAddShift
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         ' if there was a shift selected, clear that out of the array
-        If selectedShift.Count <> 0 Then
+        If Not IsNothing(selectedShift) Then
             clearSelectedShift()
         End If
         Me.Close()
@@ -43,7 +43,7 @@
         lblLoggedOn.Text = loggedOn(0) & " " & loggedOn(1)
 
         ' If a shift was selected, we preload the form with the selected shift
-        If selectedShift.Count <> 0 Then
+        If Not IsNothing(selectedShift) Then
 
             Debug.Print(selectedShift(1))
             dtpDate.Value = Date.ParseExact(selectedShift(1), "MM/dd/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo)

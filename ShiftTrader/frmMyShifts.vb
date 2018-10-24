@@ -19,7 +19,7 @@
 
     Private Sub btnDeleteShift_Click(sender As Object, e As EventArgs) Handles btnDeleteShift.Click
         storeSelectedShift(lstMyShifts)
-        If selectedShift.Count = 0 Then
+        If IsNothing(selectedShift) Then
             MsgBox("Please select a shift to delete", MsgBoxStyle.Information)
         Else
             Dim result As MsgBoxResult = MsgBox("Are you sure you want to delete this shift?", MsgBoxStyle.YesNo)
@@ -61,7 +61,7 @@
 
     Private Sub btnEditShift_Click(sender As Object, e As EventArgs) Handles btnEditShift.Click
         storeSelectedShift(lstMyShifts)
-        If selectedShift.Count = 0 Then
+        If IsNothing(selectedShift) Then
             MsgBox("Please select a shift to edit", MsgBoxStyle.Information)
         Else
             Me.Hide()
