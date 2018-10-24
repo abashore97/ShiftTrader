@@ -25,6 +25,7 @@
             Dim result As MsgBoxResult = MsgBox("Are you sure you want to delete this shift?", MsgBoxStyle.YesNo)
             If result = vbYes Then
                 deleteSelectedShift()
+                clearSelectedShift()
                 lstMyShifts.Items.Clear()
                 loadMyShifts()
             End If
@@ -56,5 +57,17 @@
     Private Sub btnAddShift_Click(sender As Object, e As EventArgs) Handles btnAddShift.Click
         Me.Hide()
         frmAddShift.Show()
+    End Sub
+
+    Private Sub btnEditShift_Click(sender As Object, e As EventArgs) Handles btnEditShift.Click
+        storeSelectedShift(lstMyShifts)
+        If selectedShift.Count = 0 Then
+            MsgBox("Please select a shift to edit", MsgBoxStyle.Information)
+        Else
+            Me.Hide()
+            frmAddShift.Show()
+        End If
+
+
     End Sub
 End Class

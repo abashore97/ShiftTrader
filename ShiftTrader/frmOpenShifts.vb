@@ -45,6 +45,7 @@ Public Class frmOpenShifts
             MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
         Else
             deleteSelectedShift()
+            clearSelectedShift()
             frmTakeShift.Show()
             Me.Close()
         End If
