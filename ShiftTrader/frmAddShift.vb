@@ -46,7 +46,7 @@
         If Not IsNothing(selectedShift) Then
 
             Debug.Print(selectedShift(1))
-            dtpDate.Value = Date.ParseExact(selectedShift(1), "MM/dd/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo)
+            dtpDate.Value = DateTime.Parse(selectedShift(1))
             cboStartTime.Text = selectedShift(2)
             cboEndTime.Text = selectedShift(3)
             cboLocation.Text = selectedShift(4)
