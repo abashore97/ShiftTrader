@@ -137,4 +137,22 @@ Module Main
         reader.Close()
         Return {}
     End Function
+
+    ' writeToFile
+    ' takes the contents and adds them to the specified file 
+    Public Sub writeToFile(filename As String, contents As String())
+        Dim writer As StreamWriter = File.AppendText(filename)
+        Dim newRecord As String = ""
+        ' construct line to be written
+        For i = 0 To contents.Length - 2
+            newRecord = newRecord & contents(i) & ","
+        Next
+
+        ' add last item without comma at the end
+        newRecord = newRecord & contents.Last
+
+        ' One account's records are stored on one line, seperated by comma
+        writer.WriteLine(newRecord)
+        writer.Close()
+    End Sub
 End Module

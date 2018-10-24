@@ -9,7 +9,7 @@ Public Class frmCreateAccount
         Dim password = txtPassword.Text
 
         ' TODO: add verification of email via regex
-        writeToFile(firstName, lastName, email, userName, password)
+        writeToFile("Accounts.txt", {firstName, lastName, email, userName, password})
         Me.Close()
     End Sub
 
@@ -18,10 +18,4 @@ Public Class frmCreateAccount
     End Sub
 
 
-    Private Sub writeToFile(firstName As String, lastName As String, email As String, userName As String, password As String)
-        Dim writer As StreamWriter = File.AppendText("Accounts.txt")
-        ' One account's records are stored on one like, seperated by comma ans space
-        writer.WriteLine(firstName & "," & lastName & "," + email & "," + userName & "," & password)
-        writer.Close()
-    End Sub
 End Class
