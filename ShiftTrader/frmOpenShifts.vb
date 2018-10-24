@@ -44,7 +44,7 @@ Public Class frmOpenShifts
         If splitName(0) = loggedOn(0) And splitName(1) = loggedOn(1) Then
             MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
         Else
-            deleteShift(selectedShift)
+            deleteSelectedShift()
             frmTakeShift.Show()
             Me.Close()
         End If

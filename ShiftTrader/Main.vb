@@ -40,7 +40,7 @@ Module Main
 
     ' deleteShift
     ' delete a shift out when taken
-    Public Sub deleteShift(shift As String())
+    Public Sub deleteSelectedShift()
         Dim reader As StreamReader
         Dim writer As StreamWriter
         If File.Exists("OpenShifts.txt") Then
@@ -52,12 +52,12 @@ Module Main
                 shiftInfo = reader.ReadLine
                 shiftProperties = shiftInfo.Split(",")
 
-                If shiftProperties(0) <> shift(0) Or
-                   shiftProperties(1) <> shift(1) Or
-                   shiftProperties(2) <> shift(2) Or
-                   shiftProperties(3) <> shift(3) Or
-                   shiftProperties(4) <> shift(4) Or
-                   shiftProperties(5) <> shift(5) Then
+                If shiftProperties(0) <> selectedShift(0) Or
+                   shiftProperties(1) <> selectedShift(1) Or
+                   shiftProperties(2) <> selectedShift(2) Or
+                   shiftProperties(3) <> selectedShift(3) Or
+                   shiftProperties(4) <> selectedShift(4) Or
+                   shiftProperties(5) <> selectedShift(5) Then
 
                     writer.WriteLine(shiftInfo)
 
@@ -69,32 +69,6 @@ Module Main
             File.Move("Temp.txt", "OpenShifts.txt")
         End If
     End Sub
-    ' findShift
-    ' find a shift in OpenShifts.txt
-    Public Function findShift(name As String, dateShift As String, startTime As String, endTime As String, location As String, permanent As String)
-        Dim reader As StreamReader
-        If File.Exists("OpenShifts.txt") Then
-            reader = File.OpenText("OpenShifts.txt")
-            Dim shiftInfo As String
-            Dim shiftProperties() As String
-            Do Until reader.EndOfStream
-                shiftInfo = reader.ReadLine
-                shiftProperties = shiftInfo.Split(",")
-
-                If shiftProperties(0) = name And
-                   shiftProperties(1) = dateShift And
-                   shiftProperties(2) = startTime And
-                   shiftProperties(3) = endTime And
-                   shiftProperties(4) = location And
-                   shiftProperties(5) = permanent Then
-                    reader.Close()
-                    Return shiftProperties
-                End If
-            Loop
-        End If
-        reader.Close()
-        Return {}
-    End Function
 
     ' findShifts
     ' finds all shifts under one name
@@ -119,6 +93,7 @@ Module Main
         reader.Close()
         Return myShifts.ToArray
     End Function
+
     ' findAccount 
     ' Searches for account holder by first and last name
     Public Function findAccount(firstName As String, lastName As String) As String()

@@ -24,7 +24,7 @@
         Else
             Dim result As MsgBoxResult = MsgBox("Are you sure you want to delete this shift?", MsgBoxStyle.YesNo)
             If result = vbYes Then
-                deleteShift(selectedShift)
+                deleteSelectedShift()
                 lstMyShifts.Items.Clear()
                 loadMyShifts()
             End If
