@@ -52,4 +52,9 @@
         End If
 
     End Sub
+
+    Private Sub btnAddShift_Click(sender As Object, e As EventArgs) Handles btnAddShift.Click
+        Me.Hide()
+        frmAddShift.Show()
+    End Sub
 End Class

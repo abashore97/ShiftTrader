@@ -15,3 +15,4 @@ C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader
 C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.pdb
 C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.frmTakeShift.resources
 C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.frmMyShifts.resources
+C:\Users\bythe\Documents\INFO 3100\ShiftTrader\ShiftTrader\obj\Debug\ShiftTrader.frmAddShift.resources
