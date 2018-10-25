@@ -6,7 +6,7 @@ Module Main
     Public loggedOn(4) As String
 
     ' Stores the selected shift in open shifts or my shifts
-    Public selectedShift(5) As String
+    Public selectedShift As List(Of String) = New List(Of String)
 
 
     ' logOut
@@ -15,10 +15,18 @@ Module Main
         loggedOn = Nothing
     End Sub
 
-    ' clearSelectedShift
-    ' clears the contents of the selected shift array after taking shift
-    Public Sub clearSelectedShift()
-        selectedShift = Nothing
+    ' loadShifts
+    ' Will update the list view provided with the latest OpenShifts.txt
+    Public Sub loadShifts(lstView As ListView)
+        Dim name As String = loggedOn(0) & " " & loggedOn(1)
+        Dim myShifts() As String = findShifts(name)
+        For Each shift In myShifts
+            ' Create a ListViewItem via String array
+            Dim shiftProperties = shift.Split(",")
+            Dim item As ListViewItem = New ListViewItem(shiftProperties)
+            lstView.Items.Add(item)
+
+        Next
     End Sub
 
     ' storeSelectedShift
@@ -29,7 +37,7 @@ Module Main
             MsgBox("Please select an item to take a shift", MsgBoxStyle.Information)
         Else
             For i = 0 To 5
-                selectedShift(i) = selected.Item(0).SubItems(i).Text
+                selectedShift.Add(selected.Item(0).SubItems(i).Text)
             Next
         End If
     End Sub
@@ -48,12 +56,12 @@ Module Main
                 shiftInfo = reader.ReadLine
                 shiftProperties = shiftInfo.Split(",")
 
-                If shiftProperties(0) <> selectedShift(0) Or
-                   shiftProperties(1) <> selectedShift(1) Or
-                   shiftProperties(2) <> selectedShift(2) Or
-                   shiftProperties(3) <> selectedShift(3) Or
-                   shiftProperties(4) <> selectedShift(4) Or
-                   shiftProperties(5) <> selectedShift(5) Then
+                If shiftProperties(0) <> selectedShift.Item(0) Or
+                   shiftProperties(1) <> selectedShift.Item(1) Or
+                   shiftProperties(2) <> selectedShift.Item(2) Or
+                   shiftProperties(3) <> selectedShift.Item(3) Or
+                   shiftProperties(4) <> selectedShift.Item(4) Or
+                   shiftProperties(5) <> selectedShift.Item(5) Then
 
                     writer.WriteLine(shiftInfo)
 
@@ -64,6 +72,7 @@ Module Main
             File.Delete("OpenShifts.txt")
             File.Move("Temp.txt", "OpenShifts.txt")
         End If
+        selectedShift.Clear()
     End Sub
 
     ' findShifts

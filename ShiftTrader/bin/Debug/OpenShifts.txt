@@ -1,2 +1,2 @@
-Abby Bashore,10/23/2018,7am,9am,Nelson,No
-Abby Bashore,10/23/2018,4am,7am,JMAC,No
+Abby Bashore,10/26/2018,9pm,11pm,Nelson,No
+Abby Bashore,10/25/2018,5pm,7pm,Apartments,Yes
