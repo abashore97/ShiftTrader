@@ -15,20 +15,6 @@ Module Main
         loggedOn = Nothing
     End Sub
 
-    ' loadShifts
-    ' Will update the list view provided with the latest OpenShifts.txt
-    Public Sub loadShifts(lstView As ListView)
-        Dim name As String = loggedOn(0) & " " & loggedOn(1)
-        Dim myShifts() As String = findShifts(name)
-        For Each shift In myShifts
-            ' Create a ListViewItem via String array
-            Dim shiftProperties = shift.Split(",")
-            Dim item As ListViewItem = New ListViewItem(shiftProperties)
-            lstView.Items.Add(item)
-
-        Next
-    End Sub
-
     ' storeSelectedShift
     ' takes in whatever list view we are selecting from and stores its contents into an array
     Public Sub storeSelectedShift(lstView As ListView)

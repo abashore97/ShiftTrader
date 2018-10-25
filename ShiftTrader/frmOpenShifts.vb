@@ -4,7 +4,7 @@
 Public Class frmOpenShifts
     ' loadData
     ' takes all the open shifts and displays them in lstOpenShifts
-    Private Sub loadData()
+    Private Sub loadAllShifts()
         If File.Exists("OpenShifts.txt") Then
             Dim shiftInfo() As String = File.ReadAllLines("OpenShifts.txt")
             For Each shift In shiftInfo
@@ -27,7 +27,7 @@ Public Class frmOpenShifts
     End Sub
 
     Private Sub frmOpenShifts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadData()
+        loadAllShifts()
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click

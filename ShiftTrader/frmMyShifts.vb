@@ -18,8 +18,7 @@
     End Sub
 
     Private Sub frmMyShifts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lstMyShifts.Items.Clear()
-        loadShifts(lstMyShifts)
+        loadMyShifts()
     End Sub
 
     Private Sub btnDeleteShift_Click(sender As Object, e As EventArgs) Handles btnDeleteShift.Click
@@ -31,7 +30,7 @@
             If result = vbYes Then
                 deleteSelectedShift()
                 lstMyShifts.Items.Clear()
-                loadShifts(lstMyShifts)
+                loadMyShifts()
 
                 ' resize name and date to size of header if list is empty
                 If lstMyShifts.Items.Count = 0 Then
@@ -64,6 +63,19 @@
             frmAddShift.Show()
         End If
 
+    End Sub
 
+    ' loadMyShifts
+    ' Will update the list view provided with the latest OpenShifts.txt
+    Public Sub loadMyShifts()
+        Dim name As String = loggedOn(0) & " " & loggedOn(1)
+        Dim myShifts() As String = findShifts(name)
+        For Each shift In myShifts
+            ' Create a ListViewItem via String array
+            Dim shiftProperties = shift.Split(",")
+            Dim item As ListViewItem = New ListViewItem(shiftProperties)
+            lstMyShifts.Items.Add(item)
+
+        Next
     End Sub
 End Class
