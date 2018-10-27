@@ -181,8 +181,9 @@ Partial Class frmAddEditShift
         Me.Controls.Add(Me.lblLoggedOn)
         Me.Controls.Add(Me.lblName)
         Me.Name = "frmAddEditShift"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmAddEditShift"
+        Me.Text = "Add/Edit A Shift"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -153,6 +153,7 @@ Partial Class frmCreateAccount
         Me.Controls.Add(Me.lblLastName)
         Me.Controls.Add(Me.lblFirstName)
         Me.Name = "frmCreateAccount"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Create Account"
         Me.ResumeLayout(False)

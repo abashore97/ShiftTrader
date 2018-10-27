@@ -86,8 +86,10 @@ Partial Class frmTakeShift
         Me.Controls.Add(Me.btnDone)
         Me.Controls.Add(Me.txtEmailBody)
         Me.Name = "frmTakeShift"
+        Me.RightToLeftLayout = True
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmTakeShift"
+        Me.Text = "Take Shift"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

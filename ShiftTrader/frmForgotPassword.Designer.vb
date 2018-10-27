@@ -114,8 +114,9 @@ Partial Class frmForgotPassword
         Me.Controls.Add(Me.lblNewPassword)
         Me.Controls.Add(Me.lblUserName)
         Me.Name = "frmForgotPassword"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmForgotPassword"
+        Me.Text = "Create A New Password"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

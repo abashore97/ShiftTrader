@@ -127,8 +127,9 @@ Partial Class frmOpenShifts
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.lblOpenShifts)
         Me.Name = "frmOpenShifts"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmOpenShifts"
+        Me.Text = "Open Shifts"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
