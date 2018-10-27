@@ -1,4 +1,6 @@
-﻿Public Class frmMyShifts
+﻿Imports System.IO
+
+Public Class frmMyShifts
 
     Private Sub btnOpenShifts_Click(sender As Object, e As EventArgs) Handles btnOpenShifts.Click
         clearSelectedShift()
@@ -27,9 +29,6 @@
                 deleteSelectedShift()
                 lstMyShifts.Items.Clear()
                 loadMyShifts()
-
-
-
             End If
         End If
         clearSelectedShift()
@@ -75,4 +74,28 @@
             clmLocation.Width = -1
         End If
     End Sub
+
+    ' findShifts
+    ' finds all shifts under one name
+    Public Function findShifts(name As String) As String()
+        Dim myShifts As List(Of String) = New List(Of String)
+        Dim reader As StreamReader
+        If File.Exists("OpenShifts.txt") Then
+            reader = File.OpenText("OpenShifts.txt")
+            Dim shiftInfo As String
+
+            Dim shiftProperties() As String
+            Do Until reader.EndOfStream
+                shiftInfo = reader.ReadLine
+                shiftProperties = shiftInfo.Split(",")
+
+                'Add shift information to myShifts Array
+                If shiftProperties(0) = name Then
+                    myShifts.Add(shiftInfo)
+                End If
+            Loop
+        End If
+        reader.Close()
+        Return myShifts.ToArray
+    End Function
 End Class

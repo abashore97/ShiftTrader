@@ -50,6 +50,7 @@ Module Main
                 shiftInfo = reader.ReadLine
                 shiftProperties = shiftInfo.Split(",")
 
+                ' if it isnt the selected shift, write it to the temp file
                 If shiftProperties(0) <> selectedShift.Item(0) Or
                    shiftProperties(1) <> selectedShift.Item(1) Or
                    shiftProperties(2) <> selectedShift.Item(2) Or
@@ -63,79 +64,12 @@ Module Main
             Loop
             reader.Close()
             writer.Close()
+            ' rewrite OpenShifts.txt with Temp.txt, thus updating our records
             File.Delete("OpenShifts.txt")
             File.Move("Temp.txt", "OpenShifts.txt")
         End If
         selectedShift.Clear()
     End Sub
-
-    ' findShifts
-    ' finds all shifts under one name
-    Public Function findShifts(name As String) As String()
-        Dim myShifts As List(Of String) = New List(Of String)
-        Dim reader As StreamReader
-        If File.Exists("OpenShifts.txt") Then
-            reader = File.OpenText("OpenShifts.txt")
-            Dim shiftInfo As String
-
-            Dim shiftProperties() As String
-            Do Until reader.EndOfStream
-                shiftInfo = reader.ReadLine
-                shiftProperties = shiftInfo.Split(",")
-
-                'Add shift information to myShifts Array
-                If shiftProperties(0) = name Then
-                    myShifts.Add(shiftInfo)
-                End If
-            Loop
-        End If
-        reader.Close()
-        Return myShifts.ToArray
-    End Function
-
-    ' findAccount 
-    ' Searches for account holder by first and last name
-    Public Function findAccount(firstName As String, lastName As String) As String()
-        Dim reader As StreamReader
-        If File.Exists("Accounts.txt") Then
-            reader = File.OpenText("Accounts.txt")
-            Dim accountInfo As String
-            Dim accountProperties() As String
-            Do Until reader.EndOfStream
-                accountInfo = reader.ReadLine
-                accountProperties = accountInfo.Split(",")
-
-                If accountProperties(0) = firstName And accountProperties(1) = lastName Then
-                    reader.Close()
-                    Return accountProperties
-                End If
-            Loop
-        End If
-        reader.Close()
-        Return {}
-    End Function
-
-    ' findAccount
-    ' overload: finds account by username instead
-    Public Function findAccount(username As String) As String()
-        Dim reader As StreamReader
-        If File.Exists("Accounts.txt") Then
-            reader = File.OpenText("Accounts.txt")
-            Dim accountInfo As String
-            Dim accountProperties() As String
-            Do Until reader.EndOfStream
-                accountInfo = reader.ReadLine
-                accountProperties = accountInfo.Split(",")
-
-                If accountProperties(3) = username Then
-                    reader.Close()
-                    Return accountProperties
-                End If
-            Loop
-        End If
-        reader.Close()
-        Return {}
-    End Function
 
     ' writeToFile
     ' takes the contents and adds them to the specified file 
