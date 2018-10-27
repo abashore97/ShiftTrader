@@ -9,7 +9,6 @@ Module Main
     ' Stores the selected shift in open shifts or my shifts
     Public selectedShift As List(Of String) = New List(Of String)
 
-
     ' logOut
     ' clears out the loggedOn array for next login 
     Public Sub logOut()
@@ -73,6 +72,50 @@ Module Main
         End If
         selectedShift.Clear()
     End Sub
+
+    ' findAccount 
+    ' Searches for account holder by first and last name
+    Public Function findAccount(firstName As String, lastName As String) As String()
+        Dim reader As StreamReader
+        If File.Exists("Accounts.txt") Then
+            reader = File.OpenText("Accounts.txt")
+            Dim accountInfo As String
+            Dim accountProperties() As String
+            Do Until reader.EndOfStream
+                accountInfo = reader.ReadLine
+                accountProperties = accountInfo.Split(",")
+
+                If accountProperties(0) = firstName And accountProperties(1) = lastName Then
+                    reader.Close()
+                    Return accountProperties
+                End If
+            Loop
+        End If
+        reader.Close()
+        Return Nothing
+    End Function
+
+    ' findAccount
+    ' overload: finds the account information by a given username
+    Public Function findAccount(username As String) As String()
+        Dim reader As StreamReader
+        If File.Exists("Accounts.txt") Then
+            reader = File.OpenText("Accounts.txt")
+            Dim accountInfo As String
+            Dim accountProperties() As String
+            Do Until reader.EndOfStream
+                accountInfo = reader.ReadLine
+                accountProperties = accountInfo.Split(",")
+
+                If accountProperties(3) = username Then
+                    reader.Close()
+                    Return accountProperties
+                End If
+            Loop
+        End If
+        reader.Close()
+        Return Nothing
+    End Function
 
     ' writeToFile
     ' takes the contents and adds them to the specified file 

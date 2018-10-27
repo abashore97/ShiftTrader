@@ -65,25 +65,4 @@ Public Class frmLogin
         End If
     End Function
 
-    ' findAccount
-    ' finds the account information by a given username
-    Public Function findAccount(username As String) As String()
-        Dim reader As StreamReader
-        If File.Exists("Accounts.txt") Then
-            reader = File.OpenText("Accounts.txt")
-            Dim accountInfo As String
-            Dim accountProperties() As String
-            Do Until reader.EndOfStream
-                accountInfo = reader.ReadLine
-                accountProperties = accountInfo.Split(",")
-
-                If accountProperties(3) = username Then
-                    reader.Close()
-                    Return accountProperties
-                End If
-            Loop
-        End If
-        reader.Close()
-        Return Nothing
-    End Function
 End Class

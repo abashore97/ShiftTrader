@@ -1,2 +1,4 @@
 Abby,Bashore,abashore@gmail.com,abasho,pass1234
 Jane,Smith,jsmith@gmail.com,jsmith,cookies
+Jane,Doe,something@email.com,jdoe,something
+John,Smith,john.smith@email.com,johnsmith,password

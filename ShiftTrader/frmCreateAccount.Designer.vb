@@ -31,9 +31,9 @@ Partial Class frmCreateAccount
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lblFirstName
@@ -102,6 +102,7 @@ Partial Class frmCreateAccount
         'txtFirstName
         '
         Me.txtFirstName.Location = New System.Drawing.Point(105, 38)
+        Me.txtFirstName.MaxLength = 20
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(256, 22)
         Me.txtFirstName.TabIndex = 12
@@ -109,20 +110,15 @@ Partial Class frmCreateAccount
         'txtLastName
         '
         Me.txtLastName.Location = New System.Drawing.Point(105, 69)
+        Me.txtLastName.MaxLength = 20
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(255, 22)
         Me.txtLastName.TabIndex = 13
         '
-        'txtEmail
-        '
-        Me.txtEmail.Location = New System.Drawing.Point(105, 97)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(255, 22)
-        Me.txtEmail.TabIndex = 14
-        '
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(105, 125)
+        Me.txtUsername.MaxLength = 20
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(256, 22)
         Me.txtUsername.TabIndex = 15
@@ -130,10 +126,19 @@ Partial Class frmCreateAccount
         'txtPassword
         '
         Me.txtPassword.Location = New System.Drawing.Point(105, 156)
+        Me.txtPassword.MaxLength = 20
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(256, 22)
         Me.txtPassword.TabIndex = 16
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(105, 97)
+        Me.txtEmail.MaxLength = 254
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(255, 22)
+        Me.txtEmail.TabIndex = 14
         '
         'frmCreateAccount
         '
@@ -170,7 +175,7 @@ Partial Class frmCreateAccount
     Friend WithEvents btnCancel As Button
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents txtLastName As TextBox
-    Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents txtPassword As TextBox
+    Friend WithEvents txtEmail As TextBox
 End Class
