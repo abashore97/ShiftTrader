@@ -65,16 +65,14 @@ Public Class frmMyShifts
             lstMyShifts.Items.Add(item)
 
         Next
-        ' resize name, date, and location to size of header if list is empty
+        ' resize name and date to size of header if list is empty
         If lstMyShifts.Items.Count = 0 Then
             clmName.Width = -2
             clmDate.Width = -2
-            clmLocation.Width = -2
         Else
             ' resize to widest entry 
             clmName.Width = -1
             clmDate.Width = -1
-            clmLocation.Width = -1
         End If
     End Sub
 
