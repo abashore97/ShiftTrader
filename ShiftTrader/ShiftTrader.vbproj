@@ -72,10 +72,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddShift.Designer.vb">
-      <DependentUpon>frmAddShift.vb</DependentUpon>
+    <Compile Include="frmAddEditShift.Designer.vb">
+      <DependentUpon>frmAddEditShift.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddShift.vb">
+    <Compile Include="frmAddEditShift.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCreateAccount.Designer.vb">
@@ -133,8 +133,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAddShift.resx">
-      <DependentUpon>frmAddShift.vb</DependentUpon>
+    <EmbeddedResource Include="frmAddEditShift.resx">
+      <DependentUpon>frmAddEditShift.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreateAccount.resx">
       <DependentUpon>frmCreateAccount.vb</DependentUpon>

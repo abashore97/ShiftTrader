@@ -15,6 +15,14 @@ Module Main
         loggedOn = Nothing
     End Sub
 
+    ' clearSelectedShift
+    ' Clears the list selected shift
+    Public Sub clearSelectedShift()
+        If selectedShift.Count <> 0 Then
+            selectedShift.Clear()
+        End If
+    End Sub
+
     ' storeSelectedShift
     ' takes in whatever list view we are selecting from and stores its contents into an array
     Public Sub storeSelectedShift(lstView As ListView)

@@ -1,10 +1,7 @@
-﻿Public Class frmAddShift
+﻿Public Class frmAddEditShift
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         ' if there was a shift selected, clear that out of the array
-        If selectedShift.Count <> 0 Then
-            selectedShift.Clear()
-        End If
-
+        clearSelectedShift()
         Me.Close()
         frmMyShifts.Show()
     End Sub
@@ -42,7 +39,7 @@
         frmMyShifts.Show()
     End Sub
 
-    Private Sub frmAddShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmAddEditShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         lblLoggedOn.Text = loggedOn(0) & " " & loggedOn(1)
 

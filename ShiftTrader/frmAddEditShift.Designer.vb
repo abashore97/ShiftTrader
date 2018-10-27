@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmAddShift
+Partial Class frmAddEditShift
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -162,7 +162,7 @@ Partial Class frmAddShift
         Me.chkPermanent.Text = "Permanent Trade"
         Me.chkPermanent.UseVisualStyleBackColor = True
         '
-        'frmAddShift
+        'frmAddEditShift
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -180,9 +180,9 @@ Partial Class frmAddShift
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblLoggedOn)
         Me.Controls.Add(Me.lblName)
-        Me.Name = "frmAddShift"
+        Me.Name = "frmAddEditShift"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmAddShift"
+        Me.Text = "frmAddEditShift"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
