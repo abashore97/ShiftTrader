@@ -11,10 +11,11 @@ Public Class frmForgotPassword
         Dim confirmPassword = txtConfirmPassword.Text
 
         ' any left empty? prompt user to enter the required information
-        If username <> "" Or newPassword <> "" Or confirmPassword <> "" Then
+        If username <> "" And newPassword <> "" And confirmPassword <> "" Then
             ' make sure that both password fields match
             If confirmPassword = newPassword Then
                 updatePassword(username, newPassword)
+                Me.Close()
             Else
                 MsgBox("Passwords must match!", MsgBoxStyle.Exclamation)
             End If
@@ -23,7 +24,7 @@ Public Class frmForgotPassword
             MsgBox("Please enter your username, and new password to continue", MsgBoxStyle.Information)
         End If
 
-        Me.Close()
+
     End Sub
 
     ' the user decided to not change their password, so close the form
