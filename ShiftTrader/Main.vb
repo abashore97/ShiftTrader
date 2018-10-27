@@ -13,7 +13,9 @@ Module Main
     ' logOut
     ' clears out the loggedOn array for next login 
     Public Sub logOut()
-        loggedOn = Nothing
+        For i = 0 To 4
+            loggedOn(i) = ""
+        Next
     End Sub
 
     ' clearSelectedShift

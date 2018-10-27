@@ -9,14 +9,14 @@ Public Class frmLogin
         Dim password = txtPassword.Text
 
         ' In case the user doesn't enter one or both of the required fields
-        If userName = "" Or password = "" Then
+        If userName <> "" And password <> "" Then
+            ' ensure that the username and password entered matches an account
+            If verifyLoginInfo(userName, password) Then
+                frmOpenShifts.Show()
+                Me.Hide()
+            End If
+        Else
             MsgBox("Please enter a username and a password to continue", MsgBoxStyle.Information)
-        End If
-
-        ' ensure that the username and password entered matches an account
-        If verifyLoginInfo(userName, password) Then
-            frmOpenShifts.Show()
-            Me.Close()
         End If
 
         txtUserName.Clear()
@@ -48,24 +48,20 @@ Public Class frmLogin
     Private Function verifyLoginInfo(username As String, password As String) As Boolean
         Dim accountInfo() As String = findAccount(username)
 
-        If accountInfo.Count = 0 Then
+        If IsNothing(accountInfo) Then
             MsgBox("The username you entered does not exist! Please Try Again",
                        MsgBoxStyle.Exclamation)
             Return False
         End If
 
-        ' finds a valid username first, then we examine the password
-        If accountInfo(3) = username Then
-            Dim expectedPassword = accountInfo(4)
-
-            If expectedPassword = password Then
-                saveLoginInfo(accountInfo)
-                Return True
-            Else
-                ' we know the username that the user entered exists, but they typed their password wrong
-                MsgBox("The password you entered is incorrect! Please Try Again", MsgBoxStyle.Exclamation)
-                Return False
-            End If
+        Dim expectedPassword = accountInfo(4)
+        If expectedPassword = password Then
+            saveLoginInfo(accountInfo)
+            Return True
+        Else
+            ' we know the username that the username entered exists, but they typed their password wrong
+            MsgBox("The password you entered is incorrect! Please Try Again", MsgBoxStyle.Exclamation)
+            Return False
         End If
     End Function
 
@@ -88,6 +84,6 @@ Public Class frmLogin
             Loop
         End If
         reader.Close()
-        Return {}
+        Return Nothing
     End Function
 End Class
