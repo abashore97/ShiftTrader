@@ -1,16 +1,19 @@
-﻿Imports System.IO
+﻿' Abigail Bashore
+' INFO 3100
+
+Imports System.IO
 
 Public Class frmTakeShift
+    Private Sub frmTakeShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        displayEmail()
+    End Sub
+
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
         txtEmail.Clear()
         txtEmailBody.Clear()
         deleteSelectedShift()
         Me.Close()
         frmOpenShifts.Show()
-    End Sub
-
-    Private Sub frmTakeShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        displayEmail()
     End Sub
 
     ' displayEmail

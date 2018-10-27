@@ -1,4 +1,5 @@
-﻿' Main Module: contains any variables or functions needed for multiple forms
+﻿' Abigail Bashore
+' Main Module: contains any variables or functions needed for multiple forms
 Imports System.IO
 
 Module Main

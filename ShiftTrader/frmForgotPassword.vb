@@ -1,4 +1,7 @@
-﻿Imports System.IO
+﻿' Abigail Bashore
+' INFO 3100
+
+Imports System.IO
 
 Public Class frmForgotPassword
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -28,6 +31,8 @@ Public Class frmForgotPassword
         Me.Close()
     End Sub
 
+    ' updatePassword
+    ' finds the account with the given username and changes the password in the file Accounts.txt
     Private Sub updatePassword(username As String, newPassword As String)
         If File.Exists("Accounts.txt") Then
             Dim reader As StreamReader = File.OpenText("Accounts.txt")

@@ -1,4 +1,6 @@
-﻿Imports System.IO
+﻿' Abigail Bashore
+' INFO 3100
+Imports System.IO
 
 Public Class frmMyShifts
 
@@ -9,6 +11,7 @@ Public Class frmMyShifts
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        ' clear the login information and a selected shift if there was any shift stored in it
         logOut()
         clearSelectedShift()
         Me.Close()

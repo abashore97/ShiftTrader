@@ -1,4 +1,6 @@
-﻿Imports System.IO
+﻿' Abigail Bashore
+' INFO 3100
+Imports System.IO
 
 Public Class frmLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -11,9 +13,10 @@ Public Class frmLogin
             MsgBox("Please enter a username and a password to continue", MsgBoxStyle.Information)
         End If
 
+        ' ensure that the username and password entered matches an account
         If verifyLoginInfo(userName, password) Then
             frmOpenShifts.Show()
-            Me.Hide()
+            Me.Close()
         End If
 
         txtUserName.Clear()
@@ -39,6 +42,7 @@ Public Class frmLogin
             loggedOn(i) = accountProperties(i).Trim
         Next
     End Sub
+
     ' verifyLoginInfo
     ' takes in a username and password, returns whether or not the username and password are valid
     Private Function verifyLoginInfo(username As String, password As String) As Boolean
@@ -59,8 +63,7 @@ Public Class frmLogin
                 Return True
             Else
                 ' we know the username that the user entered exists, but they typed their password wrong
-                MsgBox("The password you entered is incorrect! Please Try Again", MsgBoxStyle.Exclamation
-                               )
+                MsgBox("The password you entered is incorrect! Please Try Again", MsgBoxStyle.Exclamation)
                 Return False
             End If
         End If

@@ -1,5 +1,5 @@
-﻿Imports System.IO
-
+﻿' Abigail Bashore
+' INFO 3100
 Public Class frmCreateAccount
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         Dim firstName = txtFirstName.Text

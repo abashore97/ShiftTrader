@@ -1,8 +1,43 @@
-﻿Imports System.IO
+﻿' Abigail Bashore
+' INFO 3100
+Imports System.IO
 
 
 Public Class frmOpenShifts
-    ' loadData
+
+    Private Sub frmOpenShifts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadAllShifts()
+    End Sub
+
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        ' clear the login information and a selected shift if there was any shift stored in it
+        logOut()
+        clearSelectedShift()
+        Me.Close()
+        frmLogin.Show()
+    End Sub
+
+    Private Sub btnTakeShift_Click(sender As Object, e As EventArgs) Handles btnTakeShift.Click
+        storeSelectedShift(lstOpenShifts)
+
+        ' cannot take your own shift
+        Dim splitName() As String = selectedShift.Item(0).Split(" ")
+        If splitName(0) = loggedOn(0) And splitName(1) = loggedOn(1) Then
+            MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
+        Else
+            Me.Close()
+            frmTakeShift.Show()
+        End If
+    End Sub
+
+    Private Sub btnMyShifts_Click(sender As Object, e As EventArgs) Handles btnMyShifts.Click
+        ' clear the selected shift if a shift was accidentally selected
+        clearSelectedShift()
+        Me.Close()
+        frmMyShifts.Show()
+    End Sub
+
+    ' loadAllShifts
     ' takes all the open shifts and displays them in lstOpenShifts
     Private Sub loadAllShifts()
         If File.Exists("OpenShifts.txt") Then
@@ -26,34 +61,5 @@ Public Class frmOpenShifts
                 clmLocation.Width = -1
             End If
         End If
-    End Sub
-
-    Private Sub frmOpenShifts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadAllShifts()
-    End Sub
-
-    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
-        logOut()
-        Me.Close()
-        frmLogin.Show()
-    End Sub
-
-    Private Sub btnTakeShift_Click(sender As Object, e As EventArgs) Handles btnTakeShift.Click
-        storeSelectedShift(lstOpenShifts)
-
-        ' cannot take your own shift
-        Dim splitName() As String = selectedShift.Item(0).Split(" ")
-        If splitName(0) = loggedOn(0) And splitName(1) = loggedOn(1) Then
-            MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
-        Else
-            deleteSelectedShift()
-            frmTakeShift.Show()
-            Me.Close()
-        End If
-    End Sub
-
-    Private Sub btnMyShifts_Click(sender As Object, e As EventArgs) Handles btnMyShifts.Click
-        Me.Close()
-        frmMyShifts.Show()
     End Sub
 End Class
