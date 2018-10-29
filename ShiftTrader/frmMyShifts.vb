@@ -5,6 +5,7 @@ Imports System.IO
 Public Class frmMyShifts
 
     Private Sub btnOpenShifts_Click(sender As Object, e As EventArgs) Handles btnOpenShifts.Click
+        ' clear any shift that was selected from the list
         clearSelectedShift()
         Me.Close()
         frmOpenShifts.Show()
@@ -18,6 +19,7 @@ Public Class frmMyShifts
         frmLogin.Show()
     End Sub
 
+    ' load all my shifts and display them in the list view
     Private Sub frmMyShifts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadMyShifts()
     End Sub
@@ -54,7 +56,7 @@ Public Class frmMyShifts
     End Sub
 
     ' loadMyShifts
-    ' Will update the list view provided with the latest OpenShifts.txt
+    ' Will update the list view with the shifts of the person logged in.
     Public Sub loadMyShifts()
         Dim name As String = loggedOn(0) & " " & loggedOn(1)
         Dim myShifts() As String = findShifts(name)

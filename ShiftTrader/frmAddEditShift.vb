@@ -44,11 +44,6 @@ Public Class frmAddEditShift
             permanent = "No"
         End If
 
-        ' if a shift was accidentally selected before clicking the add button, clear it from the list
-        If selectedShift.Count <> 0 Then
-            clearSelectedShift()
-        End If
-
         writeToFile("OpenShifts.txt", {name, dateShift, startTime, endTime, location, permanent})
 
         ' reset form
@@ -58,9 +53,14 @@ Public Class frmAddEditShift
         cboLocation.ResetText()
         chkPermanent.CheckState = False
 
+        ' if a shift was accidentally selected before clicking the add button, clear it from the list
+        If selectedShift.Count <> 0 Then
+            clearSelectedShift()
+        End If
+
+
         Me.Close()
         frmMyShifts.Show()
     End Sub
-
 
 End Class

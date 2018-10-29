@@ -31,6 +31,7 @@ Module Main
         Dim selected As ListView.SelectedListViewItemCollection = lstView.SelectedItems
         If selected.Count = 0 Then
             MsgBox("Please select an item to take a shift", MsgBoxStyle.Information)
+
         Else
             For i = 0 To 5
                 selectedShift.Add(selected.Item(0).SubItems(i).Text)
