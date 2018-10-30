@@ -1,5 +1,8 @@
 ﻿' Abigail Bashore
 ' INFO 3100
+
+Imports System.IO
+
 Public Class frmAddEditShift
     Private Sub frmAddEditShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -43,13 +46,16 @@ Public Class frmAddEditShift
         Else
             permanent = "No"
         End If
-        ' if we are editing a shift, we should delete the selected shift before adding the edited shift
+        ' if we are editing a shift, we should update the file with the new shift
         If selectedShift.Count <> 0 Then
-            deleteSelectedShift()
+            updateShift({name, dateShift, startTime, endTime, location, permanent})
             clearSelectedShift()
+        Else
+            ' just add the shift to the bottom of the list
+            writeToFile("OpenShifts.txt", {name, dateShift, startTime, endTime, location, permanent})
         End If
 
-        writeToFile("OpenShifts.txt", {name, dateShift, startTime, endTime, location, permanent})
+
 
         ' reset form
         dtpDate.ResetText()
@@ -61,6 +67,43 @@ Public Class frmAddEditShift
 
         Me.Close()
         frmMyShifts.Show()
+    End Sub
+
+    ' update shift
+    ' when editing a shift, update the shift information
+    Private Sub updateShift(newShift As String())
+        If File.Exists("OpenShifts.txt") Then
+            Dim reader As StreamReader = File.OpenText("OpenShifts.txt")
+            ' write contents to a temporary file, then move later
+            Dim writer As StreamWriter = File.CreateText("Temp.txt")
+            Dim shiftInfo As String
+            Do Until reader.EndOfStream
+                ' grab shift information
+                shiftInfo = reader.ReadLine
+                Dim shiftProperties = shiftInfo.Split(",")
+
+                ' if the line we read is the selected shift, then update properties and write
+                If shiftProperties(0) = selectedShift.Item(0) And
+                   shiftProperties(1) = selectedShift.Item(1) And
+                   shiftProperties(2) = selectedShift.Item(2) And
+                   shiftProperties(3) = selectedShift.Item(3) And
+                   shiftProperties(4) = selectedShift.Item(4) And
+                   shiftProperties(5) = selectedShift.Item(5) Then
+
+
+                    shiftInfo = String.Join(",", newShift)
+                End If
+                ' write account info over to the temporary file
+                writer.WriteLine(shiftInfo)
+            Loop
+
+            reader.Close()
+            writer.Close()
+            ' updates Account.txt with updated password
+            File.Delete("OpenShifts.txt")
+            File.Move("Temp.txt", "OpenShifts.txt")
+        End If
+
     End Sub
 
 End Class
