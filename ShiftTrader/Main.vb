@@ -29,10 +29,9 @@ Module Main
     ' takes in whatever list view we are selecting from and stores its contents into an array
     Public Sub storeSelectedShift(lstView As ListView)
         Dim selected As ListView.SelectedListViewItemCollection = lstView.SelectedItems
-        If selected.Count = 0 Then
-            MsgBox("Please select an item to take a shift", MsgBoxStyle.Information)
-
-        Else
+        If selected.Count <> 0 Then
+            ' clear any contents if there was any
+            clearSelectedShift()
             For i = 0 To 5
                 selectedShift.Add(selected.Item(0).SubItems(i).Text)
             Next

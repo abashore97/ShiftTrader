@@ -19,14 +19,19 @@ Public Class frmOpenShifts
 
     Private Sub btnTakeShift_Click(sender As Object, e As EventArgs) Handles btnTakeShift.Click
         storeSelectedShift(lstOpenShifts)
-        ' cannot take your own shift
-        Dim splitName() As String = selectedShift.Item(0).Split(" ")
-        If splitName(0) = loggedOn(0) And splitName(1) = loggedOn(1) Then
-            MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
+        If selectedShift.Count = 0 Then
+            MsgBox("You must select a shift in order to take it", MsgBoxStyle.Information)
         Else
-            Me.Close()
-            frmTakeShift.Show()
+            ' cannot take your own shift
+            Dim splitName() As String = selectedShift.Item(0).Split(" ")
+            If splitName(0) = loggedOn(0) And splitName(1) = loggedOn(1) Then
+                MsgBox("You cannot take your own shift", MsgBoxStyle.Exclamation)
+            Else
+                Me.Close()
+                frmTakeShift.Show()
+            End If
         End If
+
     End Sub
 
     Private Sub btnMyShifts_Click(sender As Object, e As EventArgs) Handles btnMyShifts.Click

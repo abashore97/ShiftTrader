@@ -1,2 +1,4 @@
-Abby Bashore,10/26/2018,9pm,11pm,Nelson,No
-Abby Bashore,10/25/2018,5pm,7pm,Nagel,Yes
+Jane Smith,11/13/2018,5pm,7pm,JMAC,No
+Jane Doe,11/17/2018,11am,3pm,Halls,No
+John Smith,11/20/2018,7am,9am,Towers,No 
+Abby Bashore,11/25/2018,11pm,1am,Nagel,Yes

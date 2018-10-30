@@ -43,6 +43,11 @@ Public Class frmAddEditShift
         Else
             permanent = "No"
         End If
+        ' if we are editing a shift, we should delete the selected shift before adding the edited shift
+        If selectedShift.Count <> 0 Then
+            deleteSelectedShift()
+            clearSelectedShift()
+        End If
 
         writeToFile("OpenShifts.txt", {name, dateShift, startTime, endTime, location, permanent})
 
@@ -52,11 +57,6 @@ Public Class frmAddEditShift
         cboEndTime.ResetText()
         cboLocation.ResetText()
         chkPermanent.CheckState = False
-
-        ' if a shift was accidentally selected before clicking the add button, clear it from the list
-        If selectedShift.Count <> 0 Then
-            clearSelectedShift()
-        End If
 
 
         Me.Close()
