@@ -16,7 +16,6 @@ Public Class frmForgotPassword
             ' make sure that both password fields match
             If confirmPassword = newPassword Then
                 ' If they do, make sure that the password is 8-20 characters long
-                ' passwords should be 8 to 20 characters long
                 Dim passwordMatch As Regex = New Regex("[A-Za-z0-9]{8,20}")
 
                 If passwordMatch.IsMatch(confirmPassword) Then
