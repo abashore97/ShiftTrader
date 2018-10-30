@@ -2,6 +2,7 @@
 ' INFO 3100
 
 Imports System.IO
+Imports System.Text.RegularExpressions
 
 Public Class frmForgotPassword
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
@@ -14,8 +15,17 @@ Public Class frmForgotPassword
         If username <> "" And newPassword <> "" And confirmPassword <> "" Then
             ' make sure that both password fields match
             If confirmPassword = newPassword Then
-                updatePassword(username, newPassword)
-                Me.Close()
+                ' If they do, make sure that the password is 8-20 characters long
+                ' passwords should be 8 to 20 characters long
+                Dim passwordMatch As Regex = New Regex("[A-Za-z0-9]{8,20}")
+
+                If passwordMatch.IsMatch(confirmPassword) Then
+                    updatePassword(username, newPassword)
+                    Me.Close()
+                Else
+                    MsgBox("Passwords must be 8-20 characters long", MsgBoxStyle.Exclamation)
+                End If
+
             Else
                 MsgBox("Passwords must match!", MsgBoxStyle.Exclamation)
             End If
